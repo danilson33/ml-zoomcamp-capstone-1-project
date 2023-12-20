@@ -8,7 +8,7 @@ import logging
 warnings.filterwarnings('ignore')
 
 
-DATA_INPUT_PATH = '/app/data/processed'
+DATA_INPUT_PATH = '/app/data/raw/Font Dataset Large'
 MODEL_FILE_PATH = "/app/artifacts/final_model.h5"
 IMG_SIZE = 224
 NUM_COLOR_BITS = 3
