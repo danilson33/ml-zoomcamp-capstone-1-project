@@ -33,33 +33,36 @@ This dataset contains information about different font styles. The basic thing t
 ```bash
 git clone https://github.com/danilson33/ml-zoomcamp-capstone-1-project.git
 ```
-2. Run in project root
-Build docker container:
-```bash
-docker build -t font_type_prediction -f docker/Dockerfile .
-```
-3. [Optional] Download the dataset.
+2. [Optional]If you need to run notebooks I wpould recommend to use VS Code [dev containers](https://code.visualstudio.com/docs/devcontainers/create-dev-container) (look to devcontainer folder)
+3. [Optional] If you don't want to train model - you can download weights from [here](https://www.dropbox.com/scl/fi/wyj11ro18xsvqadmjuapz/final_model.h5?rlkey=9c962p4k98jwvgdg2quplabyw&dl=0) and put it to artifacts folder
+4. Download the dataset.
 You can download it manually from [here](https://www.kaggle.com/datasets/muhammadardiputra/font-recognition-data) and unzip to data/raw folder
 Or you hcan download it from cli, using your kaggle account [Configuration](https://www.kaggle.com/discussions/general/156610)
 ```bash
 kaggle datasets download -d muhammadardiputra/font-recognition-data
 ```
-Make sure your data folder have next structure
+Make sure your data folder have next structure in data folder
 ```
 .
-├── raw
-│   ├── Font Dataset Large
-│   └── Font Dataset Large Color
+├── processed
+└── raw
+    ├── Font Dataset Large
+    └── Font Dataset Large Color
 ```
-4. Run docker container
+5. Run in project root
+Build docker container:
+```bash
+docker build -t font_type_prediction -f docker/Dockerfile .
+```
+6. Run docker container
 ```bash
 docker run -it --name font_type_prediction -p 9696:9696 font_type_prediction   
 ```
-5. [Optional] Model training (retrain)
+7. [Optional] Model training (retrain)
 ```bash
  docker exec font_type_prediction python /app/scripts/model_training.py     
 ```
-6. Prediction example
+8. Prediction example
 You can test API on [http://localhost:9696](http://localhost:9696)
 or by curl:
 ```bash
