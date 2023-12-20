@@ -63,7 +63,7 @@ docker run -it --name font_type_prediction -p 9696:9696 font_type_prediction
 You can test API on [http://localhost:9696](http://localhost:9696)
 or by curl:
 ```bash
-curl -F "file=@ 'data/processed/Arial/Image_48.jpg" http://localhost:9696/predict
+curl -F "file=@data/processed/Arial/Image_48.jpg" http://localhost:9696/predict
 ```
 Response:
 ```json
