@@ -1,0 +1,8 @@
+ipykernel
+numpy
+pandas
+matplotlib
+dask
+tensorflow
+opencv-python
+scipy
